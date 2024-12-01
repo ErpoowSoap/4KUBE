@@ -6,10 +6,10 @@ spec:
   selector:
     app: fleetman-queue
   ports:
-    - protocol: TCP
+    - name: http
       port: 8161
       targetPort: 8161
-    - protocol: TCP
+    - name: jms
       port: 61616
       targetPort: 61616
   type: ClusterIP

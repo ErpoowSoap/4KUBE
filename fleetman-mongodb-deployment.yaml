@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fleetman-mongodb
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: fleetman-mongodb
@@ -18,8 +18,8 @@ spec:
           ports:
             - containerPort: 27017
           volumeMounts:
-            - name: mongo-data
-              mountPath: /data/db
+            - mountPath: /data/db
+              name: mongo-data
       volumes:
         - name: mongo-data
           persistentVolumeClaim:
