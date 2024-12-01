@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fleetman-position-simulator
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: fleetman-position-simulator
@@ -14,7 +14,9 @@ spec:
     spec:
       containers:
         - name: fleetman-position-simulator
-          image: supinfo4kube/position-simulator:1.0.0
+          image: supinfo4kube/position-simulator:1.0.1
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: production-microservice
+              value: "production-microservice"
+          ports:
+            - containerPort: 8080

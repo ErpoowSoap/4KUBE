@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: fleetman-webapp
 spec:
+  type: NodePort
+  ports:
+    - name: port-80
+      port: 80
+      targetPort: 80
+      nodePort: 30080
   selector:
     app: fleetman-webapp
-  ports:
-    - protocol: TCP
-      port: 30080
-      targetPort: 80
-  type: NodePort

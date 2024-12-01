@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fleetman-queue
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: fleetman-queue
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fleetman-queue
-          image: supinfo4kube/queue:1.0.0
+          image: supinfo4kube/queue:1.0.1
           ports:
             - containerPort: 8161
             - containerPort: 61616

@@ -3,13 +3,12 @@ kind: Service
 metadata:
   name: fleetman-queue
 spec:
-  selector:
-    app: fleetman-queue
   ports:
-    - name: http
+    - name: port-8161
       port: 8161
       targetPort: 8161
-    - name: jms
+    - name: port-61616
       port: 61616
       targetPort: 61616
-  type: ClusterIP
+  selector:
+    app: fleetman-queue
