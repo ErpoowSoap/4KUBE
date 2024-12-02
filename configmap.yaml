@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fleetman-config
+  namespace: default
+data:
+  SPRING_PROFILES_ACTIVE: "production-microservice"
+  QUEUE_HOST: "fleetman-queue.default.svc.cluster.local"
+  MONGO_HOST: "fleetman-mongodb.default.svc.cluster.local"
+  API_GATEWAY_URL: "http://fleetman-api-gateway.default.svc.cluster.local:8080"
