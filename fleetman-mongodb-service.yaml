@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: fleetman-mongodb
 spec:
-  selector:
-    app: fleetman-mongodb
   ports:
-    - protocol: TCP
+    - name: port-27017
       port: 27017
       targetPort: 27017
-  type: ClusterIP
+  selector:
+    app: fleetman-mongodb

@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: fleetman-position-tracker
-          image: supinfo4kube/position-tracker:1.0.0
-          ports:
-            - containerPort: 8080
+          image: supinfo4kube/position-tracker:1.0.1
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: production-microservice
+              value: "production-microservice"
+          ports:
+            - containerPort: 8080
